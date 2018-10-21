@@ -1,0 +1,46 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "build/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/**",
+        "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source" : "/userprofile/*",
+        "destination" : "/index.html",
+        "type" : 301
+      },
+      {
+        "source" : "/follow/*",
+        "destination" : "/index.html",
+        "type" : 301
+      },
+      {
+        "source" : "/main/*",
+        "destination" : "/index.html",
+        "type" : 301
+      },
+      {
+        "source" : "/userinfo/*",
+        "destination" : "/index.html",
+        "type" : 301
+      },
+      {
+        "source": "/userspace/*",
+        "destination": "/index.html",
+        "type": 301
+      }
+    ]
+  }
+}

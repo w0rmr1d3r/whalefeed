@@ -1,0 +1,46 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="true"></my-navbar>
+    <div class="container-fluid position-relative">
+        <form #newmessageform="ngForm">
+            <br>
+            <div class="form-row row justify-content-center">
+                <material-input [maxCount]="1000"
+                                autoFocus
+                                floatingLabel
+                                multiline
+                                required
+                                showHintOnlyOnFocus
+                                class="block-width col-8"
+                                errorMsg="Invalid message text"
+                                hintText="Write a message"
+                                id="message"
+                                label="Write a message..."
+                                ngControl="message"
+                                pattern=".{2,1000}"
+                                type="text"
+                                rows="10"></material-input>
+            </div>
+            <br>
+            <div class="form-row row justify-content-center">
+                <select id="spaceselect"
+                        ngControl="spaceselect">
+                    <option selected="selected"
+                            value="null">Select a space</option>
+                    <option *ngFor="let space of userSpaces"
+                            [value]="space">
+                        {{ space }}
+                    </option>
+                </select>
+            </div>
+            <h6 *ngIf="messageCreationError"
+                class="row justify-content-center error-message">{{ errorMessage }}</h6>
+            <br>
+            <div class="row justify-content-center">
+                <material-button [disabled]="!newmessageform.form.valid"
+                                 (click)="createMessage(newmessageform.value)"
+                                 raised
+                                 class="whalefeed-button">Create</material-button>
+            </div>
+        </form>
+    </div>
+</material-content>

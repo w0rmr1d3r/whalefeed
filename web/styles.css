@@ -1,0 +1,52 @@
+/* Google */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+
+/* Bootstrap */
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css);
+
+* {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+a:link, a:visited {
+    color: #3A689A;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #919EB1;
+    text-decoration: none;
+}
+
+a:active {
+    color: #3A689A;
+    text-decoration: none;
+}
+
+a.whalefeed-button, material-button.whalefeed-button, button.whalefeed-button {
+    background-color: #3A689A;
+    color: #FFFFFF;
+}
+
+h6.error-message, material-button.whalefeed-negative-button, material-button.whalefeed-unfollow-button {
+    color: red;
+}
+
+h6.confirm-message, material-button.whalefeed-follow-button {
+    color: green;
+}
+
+.whalefeed-link {
+    cursor: pointer;
+}
+
+.whalefeed-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+#whalefeed-main-page-section {
+    margin-top: 15px;
+}

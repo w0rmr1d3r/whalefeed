@@ -1,0 +1,72 @@
+<material-content>
+    <header class="material-header shadow">
+        <div class="material-header-row">
+            <material-button (click)="goBackToMain()"
+                             icon>
+                <material-icon icon="chevron_left"></material-icon>
+            </material-button>
+            <nav class="material-navigation">
+                <span *ngIf="user != null"
+                      class="material-header-title">{{ user.username }}</span>
+            </nav>
+            <div class="material-spacer"></div>
+            <nav class="material-navigation">
+                <material-button (click)="goToChat()"
+                                 icon>
+                    <material-icon icon="email"></material-icon>
+                </material-button>
+            </nav>
+            <nav class="material-navigation">
+                <material-button (click)="goToCreateMessage()"
+                                 icon>
+                    <material-icon icon="create"></material-icon>
+                </material-button>
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid position-relative">
+        <div class="row user-info">
+            <div class="col-4">
+                <img alt="Profile image"
+                     id="whalefeed-user-profile-image"
+                     src="https://cdn-images-1.medium.com/max/1200/1*pnXLk7ddXxZWySDc7s3LOA.png">
+            </div>
+            <div class="col-8"
+                 id="whalefeed-user-follow-info">
+                <h6 *ngIf="userFollowing != null && userFollowed != null">
+                    <following-link (click)="goToUserFollowing('following')"
+                                    class="whalefeed-link"><follow>Following:</follow> {{ userFollowing }}</following-link>
+                       <following-link (click)="goToUserFollowing('followed')"
+                                       class="whalefeed-link"><follow>Followers:</follow> {{ userFollowed }}</following-link>
+                </h6>
+                <material-button (click)="profileAction()"
+                                 raised
+                                 class="whalefeed-button">{{ actionButtonText }}</material-button>
+                <material-button (click)="goToUserInfo()"
+                                 raised
+                                 class="whalefeed-button">Info</material-button>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-1"></div>
+            <div *ngIf="user != null"
+                 class="col-10 whalefeed-description whalefeed-text">
+                {{ user.description }}
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div>
+            <material-list *ngIf="spaces != null">
+                <div *ngFor="let space of spaces"
+                     group>
+                    <material-list-item (click)="goToUserSpace(space[0])">
+                        <userspace>{{ space[0] }}</userspace>
+                        <material-chip [removable]="false">
+                            {{ space[1] }}<small> messages</small>
+                        </material-chip>
+                        <material-icon icon="chevron_right"></material-icon>
+                    </material-list-item>
+                </div>
+            </material-list>
+        </div>
+    </div>
+</material-content>

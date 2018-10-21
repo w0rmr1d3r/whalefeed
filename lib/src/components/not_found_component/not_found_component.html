@@ -1,0 +1,13 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="false"></my-navbar>
+    <div class="container-fluid position-relative"
+         id="whalefeed-main-page-section">
+        <h2 class="text-center">404</h2>
+        <p class="text-center">The page you are looking for cannot be found.</p>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <a [routerLink]="RoutePaths.index.toUrl()">Back to the main page</a>
+        </div>
+    </div>
+</material-content>

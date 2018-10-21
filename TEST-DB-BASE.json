@@ -1,0 +1,74 @@
+{
+  "spaces" : {
+    "adviceofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Advice",
+      "official" : true
+    },
+    "booksofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Books",
+      "official" : true
+    },
+    "ce3official" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "CE3",
+      "official" : true
+    },
+    "dankmemesofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Dank Memes",
+      "official" : true
+    },
+    "earthsciencesofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Earth Sciences",
+      "official" : true
+    },
+    "meetupsofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Meetups",
+      "official" : true
+    },
+    "memesofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Memes",
+      "official" : true
+    },
+    "partiesofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Parties",
+      "official" : true
+    },
+    "randomofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Random",
+      "official" : true
+    },
+    "scienceofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Science",
+      "official" : true
+    },
+    "teachersofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Teachers",
+      "official" : true
+    },
+    "technologyofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "Technology",
+      "official" : true
+    },
+    "tecnouabofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "TecnoUAB",
+      "official" : true
+    },
+    "uabofficial" : {
+      "creationdate" : "2018-03-18 17:30:00.000",
+      "name" : "UAB",
+      "official" : true
+    }
+  }
+}

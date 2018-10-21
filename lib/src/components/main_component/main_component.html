@@ -1,0 +1,85 @@
+<material-drawer #drawer="drawer"
+                 temporary>
+    <material-list *deferredContent>
+        <div group
+             class="mat-drawer-spacer"></div>
+        <div group>
+            <material-list-item (click)="goToUserProfile()">
+                <material-icon icon="person"></material-icon>Profile
+            </material-list-item>
+            <material-list-item (click)="goToSearch()">
+                <material-icon icon="search"></material-icon>Search
+            </material-list-item>
+            <!-- <material-list-item> (click)="goToSearch()"
+                <material-icon icon="explore"></material-icon>Discover
+            </material-list-item> -->
+            <material-list-item (click)="goToEditSpaces()">
+                <material-icon icon="edit"></material-icon>Edit spaces
+            </material-list-item>
+            <material-list-item (click)="goToCreateSpace()">
+                <material-icon icon="add"></material-icon>New space
+            </material-list-item>
+        </div>
+        <div group>
+            <material-list-item (click)="goToMain()">
+                <material-icon icon="forum"></material-icon>My Spaces
+            </material-list-item>
+            <material-list id="whalefeed-scrollable-spaces-menu">
+                <material-list-item *ngFor="let space of spaces"
+                                    (click)="goToClickedSpace(space[0])">
+                    {{ space[0] }}
+                    <material-icon *ngIf="space[1] == 'true'" icon="verified_user"></material-icon>
+                </material-list-item>
+            </material-list>
+        </div>
+        <div group>
+            <material-list-item (click)="goToSettings()">
+                <material-icon icon="settings"></material-icon>Settings
+            </material-list-item>
+            <material-list-item (click)="signOut()">
+                <material-icon icon="power_settings_new"></material-icon>Sign out
+            </material-list-item>
+        </div>
+        <div group>
+            <material-list-item (click)="goToChangelogSection()">
+                <material-icon icon="timeline"></material-icon>Changes
+            </material-list-item>
+            <material-list-item (click)="goToAboutSection()">
+                <material-icon icon="info"></material-icon>About
+            </material-list-item>
+        </div>
+    </material-list>
+</material-drawer>
+<material-content>
+    <header class="material-header shadow">
+        <div class="material-header-row">
+            <material-button (trigger)="drawer.toggle()"
+                             icon
+                             class="material-drawer-button">
+                <material-icon icon="menu"></material-icon>
+            </material-button>
+            <nav class="material-navigation">
+                <span class="material-header-title">{{ navigationTitle }}</span>
+            </nav>
+            <div class="material-spacer"></div>
+            <nav class="material-navigation">
+                <material-button (click)="goToChat()"
+                                 icon>
+                    <material-icon icon="email"></material-icon>
+                </material-button>
+            </nav>
+            <nav class="material-navigation">
+                <material-button (click)="goToCreateMessage()"
+                                 icon>
+                    <material-icon icon="create"></material-icon>
+                </material-button>
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid position-relative">
+        <material-list *ngIf="messages != null">
+            <message-detail *ngFor="let msg of messages"
+                            [message]="msg"></message-detail>
+        </material-list>
+    </div>
+</material-content>

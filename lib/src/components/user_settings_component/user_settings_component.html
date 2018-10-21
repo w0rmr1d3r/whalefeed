@@ -1,0 +1,171 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="true"></my-navbar>
+    <material-tab-panel (tabChange)="onTabChange($event)">
+        <material-tab label="Description">
+            <div class="container-fluid position-relative">
+                <form #descriptionform="ngForm">
+                    <br>
+                    <div class="form-row">
+                        <material-input [maxCount]="120"
+                                        autoFocus
+                                        floatingLabel
+                                        multiline
+                                        required
+                                        showHintOnlyOnFocus
+                                        class="block-width col-8"
+                                        errorMsg="Invalid description text"
+                                        hintText="Write your description"
+                                        id="description"
+                                        label="Your description..."
+                                        ngControl="description"
+                                        ngModel="{{currentDescription}}"
+                                        pattern=".{2,120}"
+                                        rows="4"
+                                        type="text"></material-input>
+                    </div>
+                    <h6 *ngIf="descriptionSaved"
+                        class="row justify-content-center confirm-message">{{ savedMessage }}</h6>
+                    <h6 *ngIf="descriptionError"
+                        class="row justify-content-center error-message">{{ errorMessage }}</h6>
+                    <br>
+                    <div class="row justify-content-center">
+                        <material-button [disabled]="!descriptionform.form.valid"
+                                         (click)="saveDescription(descriptionform.value)"
+                                         raised
+                                         class="whalefeed-button">Save</material-button>
+                    </div>
+                </form>
+            </div>
+        </material-tab>
+        <material-tab label="Language">
+            <div class="container-fluid position-relative">
+                <form #languageform="ngForm">
+                    <br>
+                    <div class="form-row">
+                        <select id="lang"
+                                ngControl="lang">
+                            <option selected="selected"
+                                    value="null">Change language</option>
+                            <option *ngFor="let language of languages"
+                                    [value]="language">
+                                {{ language }}
+                            </option>
+                        </select>
+                    </div>
+                    <h6 *ngIf="languageSaved"
+                        class="row justify-content-center confirm-message">{{ savedMessage }}</h6>
+                    <h6 *ngIf="languageError"
+                        class="row justify-content-center error-message">{{ errorMessage }}</h6>
+                    <br>
+                    <div class="row justify-content-center">
+                        <material-button (click)="saveLanguage(languageform.value)"
+                                         raised
+                                         class="whalefeed-button">Save</material-button>
+                    </div>
+                </form>
+            </div>
+        </material-tab>
+        <material-tab label="Email">
+            <div class="container-fluid position-relative">
+                <form #emailform="ngForm">
+                    <br>
+                    <div class="form-row">
+                        <material-input floatingLabel
+                                        required
+                                        showHintOnlyOnFocus
+                                        class="col-8"
+                                        errorMsg="Your current email"
+                                        hintText="Your current email"
+                                        id="currentemail"
+                                        label="Current email"
+                                        ngControl="currentemail"
+                                        type="email"></material-input>
+                    </div>
+                    <div class="form-row">
+                        <material-input floatingLabel
+                                        required
+                                        showHintOnlyOnFocus
+                                        class="col-8"
+                                        errorMsg="Invalid email"
+                                        hintText="Enter your new email"
+                                        id="newemail"
+                                        label="New email"
+                                        ngControl="newemail"
+                                        type="email"></material-input>
+                    </div>
+                    <h6 *ngIf="emailSaved"
+                        class="row justify-content-center confirm-message">{{ savedMessage }}</h6>
+                    <h6 *ngIf="emailError"
+                        class="row justify-content-center error-message">{{ errorMessage }}</h6>
+                    <br>
+                    <div class="row justify-content-center">
+                        <material-button [disabled]="!emailform.form.valid"
+                                         (click)="saveEmail(emailform.value)"
+                                         raised
+                                         class="whalefeed-button">Save</material-button>
+                    </div>
+                </form>
+            </div>
+        </material-tab>
+        <material-tab label="Password">
+            <div class="container-fluid position-relative">
+                <form #passwordForm="ngForm">
+                    <br>
+                    <div class="form-row">
+                        <material-input [maxCount]="32"
+                                        floatingLabel
+                                        required
+                                        showHintOnlyOnFocus
+                                        class="col-8"
+                                        errorMsg="Your current password"
+                                        hintText="Your current password"
+                                        id="currentpassword"
+                                        label="Current password"
+                                        ngControl="currentpassword"
+                                        pattern="[A-Za-z0-9._]{8,32}"
+                                        type="password"></material-input>
+                    </div>
+                    <div class="form-row">
+                        <material-input [maxCount]="32"
+                                        floatingLabel
+                                        required
+                                        showHintOnlyOnFocus
+                                        class="col-8"
+                                        errorMsg="Your new password"
+                                        hintText="Your new password"
+                                        id="newpassword"
+                                        label="New password"
+                                        ngControl="newpassword"
+                                        pattern="[A-Za-z0-9._]{8,32}"
+                                        type="password"></material-input>
+                    </div>
+                    <div class="form-row">
+                        <material-input [maxCount]="32"
+                                        floatingLabel
+                                        required
+                                        showHintOnlyOnFocus
+                                        class="col-8"
+                                        errorMsg="Repeat the new password"
+                                        hintText="Repeat the new password"
+                                        id="newpasswordrepeat"
+                                        label="Repeat the new password"
+                                        ngControl="newpasswordrepeat"
+                                        pattern="[A-Za-z0-9._]{8,32}"
+                                        type="password"></material-input>
+                    </div>
+                    <h6 *ngIf="passwordSaved"
+                        class="row justify-content-center confirm-message">{{ savedMessage }}</h6>
+                    <h6 *ngIf="passwordError"
+                        class="row justify-content-center error-message">{{ errorMessage }}</h6>
+                    <br>
+                    <div class="row justify-content-center">
+                        <material-button [disabled]="!passwordForm.form.valid"
+                                         (click)="savePassword(passwordForm.value)"
+                                         raised
+                                         class="whalefeed-button">Save</material-button>
+                    </div>
+                </form>
+            </div>
+        </material-tab>
+    </material-tab-panel>
+</material-content>

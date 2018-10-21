@@ -1,0 +1,12 @@
+:host header {
+    background-color: #3A689A;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+:host .whalefeed-follow-user-image {
+    height: 30px;
+    width: 30px;
+}

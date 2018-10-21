@@ -1,0 +1,56 @@
+:host {
+    @include mat-drawer-list-items;
+}
+
+:host header, material-chip {
+    background-color: #3A689A;
+}
+
+:host header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+:host material-drawer {
+    position: fixed;
+}
+
+:host material-chip {
+    color: #FFFFFF;
+}
+
+:host follow {
+    color: #4F5B73;
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+:host userspace {
+    font-size: 17px;
+}
+
+:host .user-info {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 64px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.14) 0 4px 5px 0, rgba(0, 0, 0, 0.12) 0 1px 10px 0, rgba(0, 0, 0, 0.2) 0 2px 4px -1px;
+    z-index: 1;
+}
+
+:host .whalefeed-description {
+    margin-top: 10px;
+}
+
+:host #whalefeed-user-profile-image {
+    height: 70px;
+    width: 70px;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+:host #whalefeed-user-follow-info {
+    margin-top: 5px;
+}

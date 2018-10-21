@@ -1,0 +1,21 @@
+:host {
+    @include mat-drawer-list-items;
+}
+
+:host header {
+    background-color: #3A689A;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+:host material-drawer {
+    position: fixed;
+}
+
+:host #whalefeed-scrollable-spaces-menu {
+    height: auto;
+    max-height: 120px;
+    overflow-x: hidden;
+}

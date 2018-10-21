@@ -1,0 +1,86 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="false"></my-navbar>
+    <div class="container-fluid position-relative"
+         id="whalefeed-main-page-section">
+        <h2 class="text-center">Sign up!</h2>
+        <br>
+        <form #form="ngForm"
+              (ngSubmit)="onSubmit(form.value)">
+            <div class="form-row">
+                <material-input [maxCount]="16"
+                                autoFocus
+                                floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="col-8"
+                                errorMsg="Min 2 letters, no special characters"
+                                hintText="Min 2 letters, no special characters"
+                                id="username"
+                                label="username *"
+                                ngControl="username"
+                                pattern="[A-Za-z0-9._]{2,16}"
+                                type="text"></material-input>
+            </div>
+            <div class="form-row">
+                <material-input floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="col-8"
+                                errorMsg="Invalid email"
+                                hintText="Enter your email for the account"
+                                id="email"
+                                label="email *"
+                                ngControl="email"
+                                type="email"></material-input>
+            </div>
+            <div class="form-row">
+                <material-input [maxCount]="32"
+                                floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="col-8"
+                                errorMsg="Between 8 and 32 characters"
+                                hintText="Between 8 and 32 characters"
+                                id="password"
+                                label="password *"
+                                ngControl="password"
+                                pattern="[A-Za-z0-9._]{8,32}"
+                                type="password"></material-input>
+            </div>
+            <div class="form-row">
+                <material-input floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="col-8"
+                                errorMsg="Please, repeat the password"
+                                hintText="Please, repeat the password"
+                                id="passwordrepeat"
+                                label="repeat password *"
+                                ngControl="passwordrepeat"
+                                pattern="[A-Za-z0-9._]{8,32}"
+                                type="password"></material-input>
+            </div>
+            <small class="row justify-content-center">*&nbsp;Required</small>
+            <br>
+            <h6 *ngIf="submitError"
+                class="row justify-content-center error-message">{{ errorMessage }}</h6>
+            <h6 *ngIf="submitCorrect"
+                class="row justify-content-center confirm-message">{{ correctMessage }}</h6>
+            <br>
+            <div class="row justify-content-center">
+                <button [disabled]="!form.form.valid"
+                        class="btn btn-lg w-50 whalefeed-button"
+                        type="submit">Sign up!</button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <a [routerLink]="RoutePaths.signIn.toUrl()">Sign in!</a>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <a [routerLink]="RoutePaths.index.toUrl()">Back to the main page</a>
+        </div>
+    </div>
+</material-content>

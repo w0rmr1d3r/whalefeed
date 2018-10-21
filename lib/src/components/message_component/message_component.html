@@ -1,0 +1,32 @@
+<div class="row whalefeed-message-item">
+    <div class="col-2">
+        <img (click)="goToUserProfile()"
+             alt="Profile Image"
+             class="whalefeed-message-user-image"
+             src="https://cdn-images-1.medium.com/max/1200/1*pnXLk7ddXxZWySDc7s3LOA.png">
+    </div>
+    <div class="col-8">
+        <whalefeed-user-link (click)="goToUserProfile()"
+                          class="whalefeed-link">{{ message.username }}</whalefeed-user-link>
+        <br>
+        <whalefeed-message-text class="whalefeed-text">{{ message.content }}</whalefeed-message-text>
+    </div>
+    <div class="col-2">
+        <material-icon class="whalefeed-message-menu-icon"
+                       icon="more_vert"></material-icon>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-2"></div>
+    <div *ngIf="message.spaceName != ''"
+         class="col-7">
+        <whalefeed-space-link (click)="goToMessageSpace()"
+                           class="whalefeed-link">
+            <material-icon class="whalefeed-message-space-icon"
+                           icon="forum"></material-icon>
+            {{ message.spaceName }}
+        </whalefeed-space-link>
+    </div>
+    <div class="col-3">
+        <small>{{ message.formatedCreationDate }}</small>
+    </div>
+</div>

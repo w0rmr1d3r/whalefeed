@@ -1,0 +1,53 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="true"></my-navbar>
+    <div class="container-fluid position-relative">
+        <br>
+        <form #form="ngForm">
+            <div class="form-row row justify-content-center">
+                <material-input [maxCount]="30"
+                                autoFocus
+                                floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="block-width col-8"
+                                errorMsg="Invalid input"
+                                hintText="The Space or User to search"
+                                id="inputsearch"
+                                label="Write the Space or User to search"
+                                ngControl="inputsearch"
+                                pattern=".{2,30}"
+                                type="text"></material-input>
+            </div>
+            <div class="row justify-content-center">
+                <material-button [disabled]="!form.form.valid"
+                                 (click)="search(form.value)"
+                                 raised
+                                 class="whalefeed-button">Search</material-button>
+            </div>
+        </form>
+    </div>
+    <material-tab-panel *ngIf="success">
+        <material-tab label="Users">
+            <div *ngIf="userSearched == null">
+                User not found
+            </div>
+            <div *ngIf="userSearched != null">
+                {{ userSearched }}
+                <material-button (click)="followUser(userSearched)"
+                                 raised
+                                 class="whalefeed-button whalefeed-action-button">{{ followText }}</material-button>
+            </div>
+        </material-tab>
+        <material-tab label="Spaces">
+            <div *ngIf="spaceSearched == null">
+                Space not found
+            </div>
+            <div *ngIf="spaceSearched != null">
+                {{ spaceSearched }}
+                <material-button (click)="subscribeToSpace(spaceSearched)"
+                                 raised
+                                 class="whalefeed-button whalefeed-action-button">{{ subscribeText }}</material-button>
+            </div>
+        </material-tab>
+    </material-tab-panel>
+</material-content>

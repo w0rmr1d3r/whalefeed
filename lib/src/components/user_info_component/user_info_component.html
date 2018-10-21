@@ -1,0 +1,27 @@
+<material-content>
+    <header class="material-header shadow">
+        <div class="material-header-row">
+            <material-button (click)="goBackToUserProfile()"
+                             icon>
+                <material-icon icon="chevron_left"></material-icon>
+            </material-button>
+            <nav class="material-navigation">
+                <span class="material-header-title">Info</span>
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid position-relative"
+         id="whalefeed-main-page-section">
+        <div *ngIf="user != null"
+             class="text-center">
+            <h4>{{ user.username }}</h4>
+            <h4>{{ user.description }}</h4>
+            <br>
+            <h4>Following {{ userFollowing }} users</h4>
+            <h4>Followed by {{ userFollowed }} users</h4>
+            <br>
+            <h4>Total messages: {{ userMessages }}</h4>
+            <h4>Most written in: {{ mostWrittenSpace }}</h4>
+        </div>
+    </div>
+</material-content>

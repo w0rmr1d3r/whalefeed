@@ -1,0 +1,20 @@
+<material-content>
+    <header class="material-header shadow">
+        <div class="material-header-row">
+            <material-button (click)="goBackToUserProfile()"
+                             icon>
+                <material-icon icon="chevron_left"></material-icon>
+            </material-button>
+            <nav class="material-navigation">
+                <span *ngIf="navigationTitle != null"
+                      class="material-header-title">{{ navigationTitle }}</span>
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid position-relative">
+        <material-list *ngIf="messages != null">
+            <message-detail *ngFor="let msg of messages"
+                            [message]="msg"></message-detail>
+        </material-list>
+    </div>
+</material-content>

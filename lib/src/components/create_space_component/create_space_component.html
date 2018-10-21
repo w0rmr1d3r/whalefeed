@@ -1,0 +1,32 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="true"></my-navbar>
+    <div class="container-fluid position-relative">
+        <br>
+        <form #form="ngForm">
+            <div class="form-row row justify-content-center">
+                <material-input [maxCount]="30"
+                                autoFocus
+                                floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="block-width col-8"
+                                errorMsg="Invalid name"
+                                hintText="The new name for the new Space"
+                                id="spacename"
+                                label="Write the Space name"
+                                ngControl="spacename"
+                                pattern=".{2,30}"
+                                type="text"></material-input>
+            </div>
+            <h6 *ngIf="submitError"
+                class="row justify-content-center error-message">{{ errorMessage }}</h6>
+            <br>
+            <div class="row justify-content-center">
+                <material-button [disabled]="!form.form.valid"
+                                 (click)="createSpace(form.value)"
+                                 raised
+                                 class="whalefeed-button">Create</material-button>
+            </div>
+        </form>
+    </div>
+</material-content>

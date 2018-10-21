@@ -1,0 +1,21 @@
+<header class="material-header shadow">
+    <div class="material-header-row">
+        <material-button *ngIf="hasBackButton"
+                         (click)="goBackToMain()"
+                         icon>
+            <material-icon icon="chevron_left"></material-icon>
+        </material-button>
+        <nav class="material-navigation">
+            <span class="material-header-title">{{ title }}</span>
+        </nav>
+    </div>
+</header>
+
+
+
+<!--
+<my-navbar [title]="navbarTitle" [hasBackButton]="true"></my-navbar>
+
+/// Title for the navbar
+final String navbarTitle = '';
+-->

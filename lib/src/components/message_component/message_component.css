@@ -1,0 +1,42 @@
+:host whalefeed-user-link, whalefeed-space-link {
+    color: #3A689A;
+}
+
+:host whalefeed-user-link {
+    padding-top: 5px;
+    padding-left: 2px;
+    font-size: 17px;
+}
+
+:host whalefeed-space-link {
+    max-height: 25px;
+    font-size: 15px;
+}
+
+:host whalefeed-message-text {
+    font-size: 15px;
+    line-height: 1;
+    padding-top: 4px;
+    padding-left: 2px;
+}
+
+:host .whalefeed-message-menu-icon {
+    padding-top: 5px;
+    margin-left: 20px;
+}
+
+:host .whalefeed-message-user-image {
+    height: 60px;
+    width: 60px;
+    padding-top: 7px;
+}
+
+:host .whalefeed-message-space-icon {
+    vertical-align: middle;
+}
+
+:host .whalefeed-message-item {
+    border: 1px none #ADC0CE;
+    border-bottom-style: solid;
+    padding-bottom: 10px;
+}

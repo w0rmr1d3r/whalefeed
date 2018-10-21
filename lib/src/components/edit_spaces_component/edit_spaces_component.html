@@ -1,0 +1,18 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="true"></my-navbar>
+    <div class="container-fluid position-relative">
+        <material-list>
+            <div *ngFor="let space of userSpaces"
+                 group>
+                <material-list-item>
+                    <div class="col-9">{{ space }}</div>
+                    <material-button (click)="unsubscribeFromSpace(space)"
+                                     icon
+                                     class="col-3 whalefeed-negative-button">
+                        <material-icon icon="speaker_notes_off"></material-icon>
+                    </material-button>
+                </material-list-item>
+            </div>
+        </material-list>
+    </div>
+</material-content>

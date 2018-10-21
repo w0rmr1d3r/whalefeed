@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "users": {
+      ".read": "auth !== null",
+      ".write": "auth !== null",
+      ".indexOn": [
+        "username",
+        "email"
+      ]
+    },
+    "spaces": {
+      ".read": "auth !== null",
+      ".write": "auth !== null",
+      ".indexOn": [
+        "name"
+      ]
+    },
+    "messages": {
+      ".read": "auth !== null",
+      ".write": "auth !== null",
+      ".indexOn": [
+        "spacename",
+        "username",
+        "userspace"
+      ]
+    }
+  }
+}

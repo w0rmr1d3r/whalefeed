@@ -1,0 +1,60 @@
+<material-content>
+    <my-navbar [title]="navbarTitle" [hasBackButton]="false"></my-navbar>
+    <div class="container-fluid position-relative"
+         id="whalefeed-main-page-section">
+        <h2 class="text-center">Sign in!</h2>
+        <br>
+        <form #form="ngForm"
+              (ngSubmit)="onSubmit(form.value)">
+            <div class="form-row">
+                <material-input autoFocus
+                                floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="col-8"
+                                errorMsg="Your account email"
+                                hintText="Your account email"
+                                id="email"
+                                label="email"
+                                ngControl="email"
+                                type="email"></material-input>
+            </div>
+            <div class="form-row">
+                <material-input [maxCount]="32"
+                                floatingLabel
+                                required
+                                showHintOnlyOnFocus
+                                class="col-8"
+                                errorMsg="Your account password"
+                                hintText="Your account password"
+                                id="password"
+                                label="password"
+                                ngControl="password"
+                                pattern="[A-Za-z0-9._]{8,32}"
+                                type="password"></material-input>
+            </div>
+            <div class="row justify-content-center">
+                <material-checkbox label="Keep session"
+                                   ngControl="keepsession">
+                </material-checkbox>
+            </div>
+            <h6 *ngIf="submitError"
+                class="row justify-content-center error-message">{{ signInError }}</h6>
+            <br>
+            <div class="row justify-content-center">
+                <button [disabled]="!form.form.valid"
+                        class="btn btn-lg w-50 whalefeed-button"
+                        type="submit">Sign in!</button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <a [routerLink]="RoutePaths.signUp.toUrl()">Sign up!</a>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <a [routerLink]="RoutePaths.index.toUrl()">Back to the main page</a>
+        </div>
+    </div>
+</material-content>

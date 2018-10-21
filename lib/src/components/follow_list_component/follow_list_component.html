@@ -1,0 +1,52 @@
+<material-content>
+    <header class="material-header shadow">
+        <div class="material-header-row">
+            <material-button (click)="goBackToUserProfile()"
+                             icon>
+                <material-icon icon="chevron_left"></material-icon>
+            </material-button>
+            <nav class="material-navigation">
+                <span *ngIf="showingType != null"
+                      class="material-header-title">{{ showingType }}</span>
+            </nav>
+        </div>
+    </header>
+    <div class="container-fluid position-relative">
+        <h6 *ngIf="showMessage"
+            class="row justify-content-center">{{ followError }}</h6>
+        <material-list *ngIf="followList != null">
+            <div *ngFor="let username of followList"
+                 group>
+                <material-list-item>
+                    <div (click)="goToUserProfile(username[0])"
+                         class="col-2">
+                        <img alt="Profile Image"
+                             class="whalefeed-follow-user-image"
+                             src="https://cdn-images-1.medium.com/max/1200/1*pnXLk7ddXxZWySDc7s3LOA.png">
+                    </div>
+                    <div (click)="goToUserProfile(username[0])"
+                         class="col-8">
+                        {{ username[0] }}
+                    </div>
+                    <div (click)="performAction(username[0], username[1])"
+                         class="col-2">
+                        <material-button *ngIf="username[1] == 'followed'"
+                                         icon
+                                         class="whalefeed-follow-button">
+                            <material-icon icon="person_add"></material-icon>
+                        </material-button>
+                        <material-button *ngIf="username[1] == 'following'"
+                                         icon
+                                         class="whalefeed-unfollow-button">
+                            <material-icon icon="remove_circle"></material-icon>
+                        </material-button>
+                        <material-button *ngIf="username[1] == 'self'"
+                                         icon>
+                            <material-icon icon="person"></material-icon>
+                        </material-button>
+                    </div>
+                </material-list-item>
+            </div>
+        </material-list>
+    </div>
+</material-content>
